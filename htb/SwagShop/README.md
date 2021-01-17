@@ -5,8 +5,42 @@ SwagShop on HTB.
 Enumeration done with `nmapAutomator` to find initial ports, (22,80) the `gobuster` and `nikto` to enumerate the web application. After inspection, it appears to be a magento online store. Looking over some of the files discovered via directory enumeration it looked to be version 1.9. Found the tool [magescan](https://github.com/steverobbins/magescan.git) which was able to enumerate the version to be 1.9. Furthermore, it enumerate the database username and password.
 
 ### gobuster
+```bash
+gobuster dir -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-big.txt -u http://10.10.10.140/ -x .php,/,.html,.xml -s '200,204,301,302,403,500'
+===============================================================
+Gobuster v3.0.1
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
+===============================================================
+[+] Url:            http://10.10.10.140/
+[+] Threads:        10
+[+] Wordlist:       /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-big.txt
+[+] Status codes:   200,204,301,302,403,500
+[+] User Agent:     gobuster/3.0.1
+[+] Extensions:     php,/,html,xml
+[+] Timeout:        10s
+===============================================================
+2021/01/16 22:18:35 Starting gobuster
+===============================================================
+/media (Status: 301)
+/index.php (Status: 200)
+/includes (Status: 301)
+/install.php (Status: 200)
+/lib (Status: 301)
+/app (Status: 301)
+/js (Status: 301)
+/api.php (Status: 200)
+/shell (Status: 301)
+/skin (Status: 301)
+/cron.php (Status: 200)
+/LICENSE.html (Status: 200)
+/var (Status: 301)
+/errors (Status: 301)
 
+```
 ### nikto
+```bash
+nikto -h http://10.10.10.140/ 
+```
 
 ### magescan
 ```bash
