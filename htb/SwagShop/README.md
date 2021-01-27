@@ -1,6 +1,9 @@
 # SwagShop
 SwagShop on HTB.
 
+## Take-Aways
+* With admin web app creds, always look to update settings to allow upload of malicious file types and discover where they are uploaded to.
+
 ## Enumeration
 Enumeration done with `nmapAutomator` to find initial ports, (22,80) the `gobuster` and `nikto` to enumerate the web application. After inspection, it appears to be a magento online store. Looking over some of the files discovered via directory enumeration it looked to be version 1.9. Found the tool [magescan](https://github.com/steverobbins/magescan.git) which was able to enumerate the version to be 1.9. Furthermore, it enumerate the database username and password.
 

@@ -1,0 +1,14 @@
+[0;32m---------------------Recon Recommendations----------------------
+[0m
+[0m
+[0;33mWeb Servers Recon:
+[0m
+gobuster dir -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-big.txt -t 30 -k -x html,php,js,txt,/ -u http://10.10.10.121:80 -o recon/gobuster_10.10.10.121_80.txt
+nikto -host 10.10.10.121:80 | tee recon/nikto_10.10.10.121_80.txt
+
+gobuster dir -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-big.txt -t 30 -k -x html,php,js,txt,/ -u http://10.10.10.121:3000 -o recon/gobuster_10.10.10.121_3000.txt
+nikto -host 10.10.10.121:3000 | tee recon/nikto_10.10.10.121_3000.txt
+
+
+
+

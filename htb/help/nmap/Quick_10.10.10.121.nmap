@@ -1,0 +1,11 @@
+# Nmap 7.91 scan initiated Tue Jan 26 14:55:10 2021 as: nmap -Pn -T4 --max-retries 1 --max-scan-delay 20 --defeat-rst-ratelimit --open -oN nmap/Quick_10.10.10.121.nmap 10.10.10.121
+Nmap scan report for 10.10.10.121
+Host is up (0.027s latency).
+Not shown: 697 closed ports, 300 filtered ports
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+3000/tcp open  ppp
+
+# Nmap done at Tue Jan 26 14:55:13 2021 -- 1 IP address (1 host up) scanned in 2.67 seconds
